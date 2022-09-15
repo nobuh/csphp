@@ -6,7 +6,7 @@
     </include>
   </coverage>
   <testsuites>
-    <testsuite name="csphp">
+    <testsuite name="testsuite">
       <directory suffix="Test.php">tests</directory>
     </testsuite>
   </testsuites>
