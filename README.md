@@ -7,5 +7,5 @@ PHP とコンピューターサイエンスの学習両方を兼ねて解く。
 ライセンスは Classic Computer Sciense Prlblems 著者の 
 https://github.com/davecom/ClassicComputerScienceProblemsInPython を踏襲。
 
-1. [FirstClassTest.php](tests/FirstClassTest.php) : composer や phpunit などの環境設定確認のための最初のクラス
-2. [FibonacciTest.php](tests/FibonacciTest.php) : フィボナッチ数
+1. [FirstClassTest.php](src/FirstClass.php) : composer や phpunit などの環境設定確認のための最初のクラス
+2. [FibonacciTest.php](src/Fibonacci.php) : フィボナッチ数
