@@ -1,6 +1,9 @@
 <?php declare(strict_types=1);
 require dirname(__DIR__) . '/src/FirstClass.php';
 
+/*
+ * 環境設定とテストの確認のための最初のクラス
+ */
 class FirstClassTest extends \PHPUnit\Framework\TestCase
 {
     public function testAdd(): void
