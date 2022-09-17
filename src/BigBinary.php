@@ -54,4 +54,21 @@ class BigBinary
         $this->data = gmp_strval(gmp_xor($gmp1, $gmp2), $this->base);
         return $this;
     }
+
+    public function bitLength(): int
+    {
+        $gmp = gmp_init($this->data, $this->base);
+        $start = gmp_scan1($gmp, 0);
+        if ($start === -1) {
+            return 0;
+        }
+        $prev = $start;
+        while (1) {
+            $next = gmp_scan1($gmp, $prev + 1);
+            if ($next === -1) {
+                return $prev + 1;
+            } 
+            $prev = $next;
+        }
+    }
 }

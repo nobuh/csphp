@@ -29,6 +29,8 @@ require dirname(__DIR__) . '/src/BigBinary.php';
  * or と xor も同様
  * 
  * bitlength() は、最上位ビット（最左端のビット）の位置を返す
+ * 何も無かったら 0
+ * 最右端が1
  */
 
 class BigBinaryTest extends \PHPUnit\Framework\TestCase
@@ -78,5 +80,15 @@ class BigBinaryTest extends \PHPUnit\Framework\TestCase
         $x = new BigBinary('73786976294838206460'); // 64 bit max * 4   = 1..100 
         $y = new BigBinary('73786976294838206461'); // 64 bit max *4 +1 = 1..101  
         $this->assertSame("1", $x->xor($y)->print());
+    }
+
+    public function testBitLength(): void
+    {
+        $x = new BigBinary("10001000", 2);
+        $this->assertSame(8, $x->bitLength());
+        $x = new BigBinary("0xFFFF", 16);
+        $this->assertSame(16, $x->bitLength());
+        $x = new BigBinary("0x00", 16);
+        $this->assertSame(0, $x->bitLength());
     }
 }
