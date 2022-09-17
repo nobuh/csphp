@@ -17,6 +17,18 @@ require dirname(__DIR__) . '/src/BigBinary.php';
  * shiftRight(n)
  * 
  * また、データの表示は print() で文字列として行う
+ * 基数はインスタンス生成時の設定に従うが、
+ * 左端の 0 パディングなどは行われないため
+ * ２進数の場合は常に1から始まる
+ * 
+ * $bin1->and(BigBinary $bin2)
+ * 
+ * $bin1 と $bin2 は両方とも BigBinary のインスタンスということに
+ * $bin1 と $bin2 の and 演算を行って結果を $bin1 に書き込む
+ * 
+ * or と xor も同様
+ * 
+ * bitlength() は、最上位ビット（最左端のビット）の位置を返す
  */
 
 class BigBinaryTest extends \PHPUnit\Framework\TestCase
@@ -41,5 +53,30 @@ class BigBinaryTest extends \PHPUnit\Framework\TestCase
         $b = new BigBinary("100");
         $this->assertSame("50", $b->shiftRight(1)->print());
         $this->assertSame("12", $b->shiftRight(2)->print());
+    }
+
+    public function testAnd(): void
+    {
+        $x = new BigBinary("1110", 2);
+        $y = new BigBinary("5");
+        $this->assertSame("100", $x->and($y)->print());
+
+        $x = new BigBinary('73786976294838206460'); // 64 bit max * 4   = 1..100 
+        $y = new BigBinary('73786976294838206461'); // 64 bit max *4 +1 = 1..101  
+        $this->assertSame("73786976294838206460", $x->and($y)->print());
+    }
+
+    public function testOr(): void
+    {
+        $x = new BigBinary('73786976294838206460'); // 64 bit max * 4   = 1..100 
+        $y = new BigBinary('73786976294838206461'); // 64 bit max *4 +1 = 1..101  
+        $this->assertSame("73786976294838206461", $x->or($y)->print());
+    }
+
+    public function testXor(): void
+    {
+        $x = new BigBinary('73786976294838206460'); // 64 bit max * 4   = 1..100 
+        $y = new BigBinary('73786976294838206461'); // 64 bit max *4 +1 = 1..101  
+        $this->assertSame("1", $x->xor($y)->print());
     }
 }

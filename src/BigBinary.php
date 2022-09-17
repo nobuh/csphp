@@ -30,4 +30,28 @@ class BigBinary
     {
         return $this->data;
     }
+
+    public function and(BigBinary $bb): BigBinary
+    {
+        $gmp1 = gmp_init($this->data, $this->base);
+        $gmp2 = gmp_init($bb->data, $bb->base);
+        $this->data = gmp_strval(gmp_and($gmp1, $gmp2), $this->base);
+        return $this;
+    }
+
+    public function or(BigBinary $bb): BigBinary
+    {
+        $gmp1 = gmp_init($this->data, $this->base);
+        $gmp2 = gmp_init($bb->data, $bb->base);
+        $this->data = gmp_strval(gmp_or($gmp1, $gmp2), $this->base);
+        return $this;
+    }
+
+    public function xor(BigBinary $bb): BigBinary
+    {
+        $gmp1 = gmp_init($this->data, $this->base);
+        $gmp2 = gmp_init($bb->data, $bb->base);
+        $this->data = gmp_strval(gmp_xor($gmp1, $gmp2), $this->base);
+        return $this;
+    }
 }
