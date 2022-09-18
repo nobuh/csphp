@@ -11,3 +11,4 @@ https://github.com/davecom/ClassicComputerScienceProblemsInPython を踏襲。
 2. [FibonacciTest.php](tests/FibonacciTest.php) : フィボナッチ数
 3. [BigBinaryTest.php](tests/BigBinaryTest.php) : GMP を使った任意長のバイナリ整数にビットシフトを実装
 4. [BigBinaryTest.php](tests/BigBinaryTest.php) : OR, AND, XOR, 最上位ビット (MSB: Most Significant Bit / Bit Length)
+5. [DNACodeTest.php](tests/DNACodeTest.php) : DNA の AGCT のコードを2ビット表現に圧縮する
