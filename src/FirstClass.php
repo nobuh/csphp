@@ -1,8 +1,6 @@
 <?php declare(strict_types=1);
-require 'vendor/autoload.php';
 
-// まだ他のクラスを使ってない
-// use Nobuh\Csphp;
+namespace Nobuh\Csphp;
 
 class FirstClass
 {

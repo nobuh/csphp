@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
-require dirname(__DIR__) . '/src/BigBinary.php';
+
+use Nobuh\Csphp\BigBinary;
 
 /*
  * BigBinary gmp を使った任意長のバイナリ

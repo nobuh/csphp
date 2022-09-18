@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
-require dirname(__DIR__) . '/src/Fibonacci.php';
+
+use Nobuh\Csphp\Fibonacci;;
 
 /*
  * フィボナッチ数を求める

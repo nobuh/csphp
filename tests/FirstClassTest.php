@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
-require dirname(__DIR__) . '/src/FirstClass.php';
+
+use Nobuh\Csphp\FirstClass;
 
 /* 
  * 環境設定とテストの確認のための最初のクラス
