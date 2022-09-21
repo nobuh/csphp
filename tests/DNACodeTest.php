@@ -35,7 +35,7 @@ class DNACodeTest extends \PHPUnit\Framework\TestCase
         $dna->compress("ACxGT");
         assertSame("ACGT", $dna->decompress());
 
-        $str = str_repeat("atgacggacaaattgacctcccttcgtcagtacacatgcaatgcacaccgtagtggccga", 300); 
+        $str = str_repeat("atgacggacaaattgacctcccttcgtcagtacacatgcaatgcacaccgtagtggccga", 100); 
         $dna->compress($str);
         assertSame(strtoupper($str), $dna->decompress());
     }

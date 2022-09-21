@@ -4,8 +4,6 @@ namespace Nobuh\Csphp;
 
 use Nobuh\Csphp\BigBinary;
 
-use function PHPUnit\Framework\isNull;
-
 class DNACode
 {
     public BigBinary $data;
