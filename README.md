@@ -13,3 +13,5 @@ https://github.com/davecom/ClassicComputerScienceProblemsInPython を踏襲。
 4. [BigBinaryTest.php](tests/BigBinaryTest.php) : OR, AND, XOR, 最上位ビット (MSB: Most Significant Bit / Bit Length)
 5. [DNACodeTest.php](tests/DNACodeTest.php) : DNA の AGCT のコードを2ビット表現に圧縮する
 6. [OnetimepadTest.php](tests/OnetimepadTest.php) : ワンタイムパッドによる暗号化
+7. [CalculatePiTest.php](tests/CalculatePiTest.php) : ライプニッツの級数を使って円周率を計算する
+8. [HanoiTest.php](tests/HanoiTest.php) : ハノイの塔を解く
